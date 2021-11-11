@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Site</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar nav navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"> <img src="general logo2021.png" alt="" width="100"
+                    height="100"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">about</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="media.html">media</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">faq</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contant.html">contant</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+
+            <div id="quiz"></div>
+            <button id="submit">Submit Quiz</button>
+            <div id="results"></div>
+
+        </div>
+    </div>
+    <script>
+        (function () {
+            function buildQuiz() {
+                const output = [];
+
+                myQuestions.forEach(
+                    (currentQuestion, questionNumber) => {
+
+                        const answers = [];
+
+                        for (letter in currentQuestion.answers) {
+
+                            answers.push(
+                                `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+            </label>`
+                            );
+                        }
+
+                        output.push(
+                            `<div class="question"> ${currentQuestion.question} </div>
+          <div class="answers"> ${answers.join('')} </div>`
+                        );
+                    }
+                );
+
+                quizContainer.innerHTML = output.join('');
+            }
+
+            function showResults() {
+
+                const answerContainers = quizContainer.querySelectorAll('.answers');
+
+                let numCorrect = 0;
+
+                myQuestions.forEach((currentQuestion, questionNumber) => {
+
+                    const answerContainer = answerContainers[questionNumber];
+                    const selector = `input[name=question${questionNumber}]:checked`;
+                    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+                    if (userAnswer === currentQuestion.correctAnswer) {
+                        numCorrect++;
+
+                        answerContainers[questionNumber].style.color = 'lightgreen';
+                    } else {
+                        answerContainers[questionNumber].style.color = 'red';
+                    }
+                });
+
+                resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+            }
+
+            const quizContainer = document.getElementById('quiz');
+            const resultsContainer = document.getElementById('results');
+            const submitButton = document.getElementById('submit');
+            const myQuestions = [{
+                    question: "Which Italian city is famous for its carnival celebrations?",
+                    answers: {
+                        a: "napoli",
+                        b: "rome",
+                        c: "Venice"
+                    },
+                    correctAnswer: "c"
+                },
+                {
+                    question: "Where was the first Mardi Gras parade in the United States?",
+                    answers: {
+                        a: "chicago,elinoy",
+                        b: "neworlens",
+                        c: "Mobile, Alabama"
+                    },
+                    correctAnswer: "c"
+                },
+                {
+                    question: " In which year did Mardi Gras move its New Orleans celebration dates to not interfere with the Super Bowl?",
+                    answers: {
+                        a: "2010",
+                        b: "2016",
+                        c: "2005",
+                        d: "2013"
+                    },
+                    correctAnswer: "d"
+                },
+                {
+                    question: " The average float rider in New Orleans spends how much for their costume, beads and other souvenirs for Mardi Gras?",
+                    answers: {
+                        a: "750$",
+                        b: "500$",
+                        c: "120$",
+                        d: "450$"
+                    },
+                    correctAnswer: "b"
+                },
+                {
+                    question: " When did Louisiana declare Fat Tuesday a state holiday?",
+                    answers: {
+                        a: "1875",
+                        b: "2016",
+                        c: "2005",
+                        d: "2013"
+                    },
+                    correctAnswer: "a"
+                },
+                {
+                    question: "Mardi Gras beads used to be made of what material? ",
+                    answers: {
+                        a: "platinum",
+                        b: "silver",
+                        c: "gold",
+                        d: " Glass"
+                    },
+                    correctAnswer: "d"
+                },
+                {
+                    question: "How many times have Mardi Gras parades been canceled in New Orleans? ",
+                    answers: {
+                        a: "14",
+                        b: "13",
+                        c: "12",
+                        d: "11"
+                    },
+                    correctAnswer: "b"
+                },
+                {
+                    question: "On average, how many people typically visit New Orleans for Mardi Gras every year? ",
+                    answers: {
+                        a: "1.4 million",
+                        b: "2.4 million",
+                        c: "3.4 million",
+                        d: "1.6 million"
+                    },
+                    correctAnswer: "a"
+                },
+                {
+                    question: "When were floats first introduced to New Orleans Mardi Gras parades? ",
+                    answers: {
+                        a: "1894",
+                        b: "1903",
+                        c: "1857",
+                        d: "1850"
+                    },
+                    correctAnswer: "c"
+                },
+                {
+                    question: " What does green signify during Mardi Gras? ",
+                    answers: {
+                        a: "Faith",
+                        b: "Justice",
+                        c: "Power",
+                        d: "2013"
+                    },
+                    correctAnswer: "a"
+                },
+            ];
+
+            buildQuiz();
+
+            submitButton.addEventListener('click', showResults);
+        })();
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div id="cop">&copy;Dor Achiankar</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

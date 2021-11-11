@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Site</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="@@path/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar nav navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"> <img src="general logo2021.png" alt="" width="100"
+                    height="100"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">about</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="media.html">media</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">faq</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contant.html">contant</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="fancy-gallery mb-5">
+                <a href="fancy1.jpg" class="mb-4 col-4 col-sm-4 img-fluid" data-fancybox="images"
+                    data-caption="Conference Space">
+                    <img class="rounded" src="fancy1.jpg" alt="" />
+                </a>
+                <a href="fancy2.jpg" class="mb-4 col-4 col-sm-4 img-fluid" data-fancybox="images"
+                    data-caption="Cowork Office">
+                    <img class="rounded" src="fancy2.jpg" alt="" />
+                </a>
+                <a href="fancy3.jpg" class="mb-4 col-4 col-sm-4 img-fluid" data-fancybox="images"
+                    data-caption="Lifestyle Space">
+                    <img class="rounded" src="fancy3.jpg" alt="" />
+                </a>
+                <a href="fancy4.jpg" class="mb-4 col-4 col-sm-4 img-fluid" data-fancybox="images"
+                    data-caption="Conference Space">
+                    <img class="rounded" src="fancy4.jpg" alt="" />
+                </a>
+                <a href="fancy5.jpg" class="mb-4 col-4 col-sm-4 img-fluid" data-fancybox="images"
+                    data-caption="Meeting Office">
+                    <img class="rounded" src="fancy5.jpg" alt="" />
+                </a>
+                <a href="fancy6.jpg" class="mb-4 col-4 col-sm-4 img-fluid" data-fancybox="images"
+                    data-caption="Private Space">
+                    <img class="rounded" src="fancy6.jpg" alt="" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+
+
+            <div class="video">
+
+                <iframe width="500" height="565" src="https://www.youtube.com/embed/GDB_nBwm_Gk"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+
+
+
+                <iframe width="500" height="565" src="https://www.youtube.com/embed/Svsk9WeqzPs"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+
+
+                <iframe width="500" height="565" src="https://www.youtube.com/embed/cT5vnPybf3Y"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+
+
+
+                <iframe width="500" height="565" src="https://www.youtube.com/embed/hzj1Hwa_6A8"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <button id="quizzz"><a href="bonus.html" target="_blank">Quiz</a></button>
+
+    <footer>
+        <div id="cop">&copy;Dor Achiankar</div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+        var mybutton = document.getElementById("myBtn");
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <!-- Fancybox JS -->
+    <script src="@@path/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+</body>
+
+</html>
